@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+form.form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 8px;
+  & div{
+    display: flex;
+    width: 100%;
+  }
+  & >:first-child {
+    flex: 10 1 0;
+    gap: 4px;
+    & >:first-child {
+      flex: 1 1 0;
+    }
+    & >:last-child {
+      flex: 4 1 0;
+    }
+  }
+  & >:last-child {
+    flex: 1 1 0;
+  }
+}
+
+input {
+  width: 100%;
+}
+
+.form__input-wrapper input {
+  border: 1px solid;
+  padding: 4px;
+}
+
+::placeholder {
+  color:#DADADA;
+  font-family: Georgia;
+  font-style: italic;
+}
+
+table { 
+  table-layout: auto;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  font-size: 12px;
+  max-width: 100%;
+  width: 100%;
+  overflow: auto;
+  & td {
+    padding: 4px;
+    text-align: center;
+  }
+  & button {
+    font-size: inherit;
+    color: red;
+    border: none;
+    outline: none;
+    background-color: inherit ;
+    cursor: pointer;
+  }
+}
+
+.apply__btn-wrapper{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+  & button {
+    padding :2px 4px;
+  }
+}
+
+thead{
+  background-color: #A5A5A5;
+  color:white;
+  & th:first-child {
+    width: 20%;
+  }
+  & th:nth-child(3) {
+    width: 20%;
+  }
+}
+
+th {
+  border : 1px solid;
+  padding: 4px;
+}
+
+tbody{
+  & tr:nth-child(odd) {
+    background-color: #DFDFDF;
+  }
+  & tr:nth-child(even) {
+    background-color: #F0F0F0;
+  }
+}
+.rawdata_form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  & textarea {
+    width: 100%;
+  }
+}
