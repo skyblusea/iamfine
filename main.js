@@ -87,13 +87,6 @@ form.addEventListener('submit', (e) => addTable(e))
 
 //그래프 출력
 const applyHandler = () => {
-  //초기화
-  // const ticks = document.querySelectorAll('.x-tick');
-  // console.log(ticks)
-  // ticks.forEach((tick) => 
-  //   tick.remove()
-  // )
-  //reload로 전환
   const length = datas.length;
   const calc = 40.5 + 50*length + 40.5;
   const path = document.querySelector('.x-axios');
@@ -124,6 +117,15 @@ const applyHandler = () => {
     text.setAttribute('dy','0.71em')
     text.textContent = data.id
     g.appendChild(text)
+    const xlabel = document.querySelector('#x-label');
+    xlabel.appendChild(g)
+
+    const barG = document.createElementNS(
+      'http://www.w3.org/2000/svg',
+      'g'
+    );
+    barG.setAttribute('opacity', 1);
+    barG.setAttribute('transform', `translate(${tickPosition},0)`);
 
     const rect = document.createElementNS(
       'http://www.w3.org/2000/svg',
@@ -136,10 +138,10 @@ const applyHandler = () => {
     rect.setAttribute('y',`-${rectheight}`)
     rect.setAttribute('width','20')
     rect.setAttribute('height',`${rectheight}`)
-    g.appendChild(rect)
+    barG.appendChild(rect)
 
-    const xlabel = document.querySelector('#x-label');
-    xlabel.appendChild(g)
+    const bars = document.querySelector('#bars');
+    bars.appendChild(barG)
   })
 }
 
@@ -154,7 +156,6 @@ applyBtn.addEventListener('click', ()=>{
 
 const textarea = document.querySelector('textarea');
 text = JSON.stringify(datas)
-
 text = text.replaceAll('[{', '[\n  {');
 text = text.replaceAll('}]', '\n  }\n]');
 text = text.replaceAll('},{', '\n  },\n  {');

@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IAMFINE 과제</title>
   </head>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="index.css" />
   <body>
     <main>
-      <section class="chart">
+      <section class="graph">
         <h3>1. 그래프</h3>
-      </section>
-      <section class="chart">
         <svg width="640" height="400">
           <g id="x-label" transform="translate(0,370)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle">
             <path class="x-axios" stroke="currentColor" d="M40.5,1V0.5H100.5V1"></path>
+          </g>
+          <g id="bars" transform="translate(0,370)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle">
           </g>
           <g id="y-label" transform="translate(40,0)" fill="none" font-size="10" font-family="sans-serif" text-anchor="end">
             <path class="y-axios" stroke="currentColor" d="M-6,370.5H0.5V20.5H-6"></path>
@@ -110,5 +110,5 @@
       </section>
     </main>
   </body>
-  <script src="chart.js"></script>
+  <script src="main.js"></script>
 </html>
